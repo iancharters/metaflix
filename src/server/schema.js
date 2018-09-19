@@ -19,44 +19,44 @@ const typeDefs = `
   """
   type Movie {
     id: ID
-    title: String
-    coverImage: String
-		wideImage: String
-		detailImage: String
-    actors: [Actor]
-    genres: [String]
-		reviews: [Review]
+    title: String!
+    coverImage: String!
+		wideImage: String!
+		detailImage: String!
+    actors: [Actor!]!
+    genres: [String!]!
+		reviews: [Review!]!
     rating: Float
-    reviewCount: Int
-		category: String
-		synopsis: String
+    reviewCount: Int!
+		category: String!
+		synopsis: String!
   }
 
   """
   User type.
   """
   type User {
-    id: ID
-    name: String
-    photo: String
+    id: ID!
+    name: String!
+    photo: String!
   }
 
   """
   Actor type.
   """
   type Actor {
-		id: ID
-    name: String
+		id: ID!
+    name: String!
   }
 
   """
   Review type.
   """
   type Review {
-    id: ID
-    user: User
-    rating: Int
-    content: String
+    id: ID!
+    user: User!
+    rating: Int!
+    content: String!
   }
 
   # ================================================

@@ -13,11 +13,10 @@ const MovieWrapper = styled.div`
 `;
 
 const MovieTitle = styled.div`
-  text-overflow: ellipses;
+  white-space: nowrap;
   overflow: hidden;
+  text-overflow: ellipsis;
 `;
-
-const MovieActors = styled.div``;
 
 class Movie extends React.PureComponent {
   static defaultProps = {

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Switch, Route} from 'react-router';
+import {HashRouter as Router, Switch, Route} from 'react-router-dom';
 import {ApolloProvider} from 'react-apollo';
 import {IntlProvider} from 'react-intl';
 import {createGlobalStyle, ThemeProvider} from 'styled-components';
@@ -30,18 +30,20 @@ class AppRoot extends React.Component {
             <React.Fragment>
               <CSSReset />
               <GlobalStyles />
-              <Switch>
-                <Route path="/" exact render={() => <HomeScreen />} />
-                <Route
-                  path="/movie/:id"
-                  render={(routeProps) => {
-                    return (
-                      <MovieDetailsScreen id={routeProps.match.params.id} />
-                    );
-                  }}
-                />
-                <Route render={() => <NotFoundScreen />} />
-              </Switch>
+              <Router>
+                <Switch>
+                  <Route path="/" exact render={() => <HomeScreen />} />
+                  <Route
+                    path="/movie/:id"
+                    render={(routeProps) => {
+                      return (
+                        <MovieDetailsScreen id={routeProps.match.params.id} />
+                      );
+                    }}
+                  />
+                  <Route render={() => <NotFoundScreen />} />
+                </Switch>
+              </Router>
             </React.Fragment>
           </ThemeProvider>
         </IntlProvider>

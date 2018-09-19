@@ -10,7 +10,7 @@ export default [
     wideImage:
       'http://old.cinapse.co/wp-content/uploads/2015/01/PreBanner-e1420646046273.jpg',
     detailImage:
-      'http://www.broadway.org.uk/images/events/film_predestination/banner.jpg',
+      'https://i.imgur.com/fV1Gmnv.jpg',
     category: 'banner',
     synopsis:
       'For his final assignment, a top temporal agent must pursue the one criminal that has eluded him throughout time. The chase turns into a unique, surprising and mind-bending exploration of love, fate, identity and time travel taboos.',
