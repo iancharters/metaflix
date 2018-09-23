@@ -59,7 +59,7 @@ const DetailImageBannerContent = styled.div`
 class DetailImage extends React.PureComponent {
   render() {
     return (
-      <DetailImageWrapper image={this.props.movie.detailImage}>
+      <DetailImageWrapper image={this.props.detailImage}>
         <DetailImageBannerBlur />
         <DetailImageBanner>
           <DetailImageBannerContent>

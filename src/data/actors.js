@@ -26,4 +26,11 @@ export default [
   {id: 19, name: 'Leonardo DiCaprio'},
   {id: 20, name: 'Joeseph Gordon-Levitt'},
   {id: 21, name: 'Ellen Page'},
+
+  {id: 22, name: 'Bruce Willis'},
+  {id: 23, name: 'Emily Blunt'},
+
+  {id: 24, name: 'Jake Gyllenhaal'},
+  {id: 25, name: 'Michelle Monaghan'},
+  {id: 26, name: 'Vera Farmiga'},
 ];

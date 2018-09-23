@@ -23,6 +23,27 @@ export const GET_MOVIE = gql`
       }
       rating
       reviewCount
+      similarShows {
+        id
+        title
+        coverImage
+      }
+    }
+  }
+`;
+
+export const GET_MOVIE_REVIEWS = gql`
+  query movieReviews($id: ID!) {
+    movie(id: $id) {
+      reviews {
+        id
+        rating
+        content
+        user {
+          name
+          photo
+        }
+      }
     }
   }
 `;

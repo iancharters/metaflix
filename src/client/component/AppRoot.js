@@ -8,6 +8,7 @@ import CSSReset from './CSSReset';
 import HomeScreen from './view/HomeScreen';
 import MovieDetailsScreen from './view/MovieDetailsScreen';
 import NotFoundScreen from './view/NotFoundScreen';
+import ReviewsScreen from './view/ReviewsScreen';
 
 import * as theme from '../theme';
 
@@ -38,6 +39,14 @@ class AppRoot extends React.Component {
                     render={(routeProps) => {
                       return (
                         <MovieDetailsScreen id={routeProps.match.params.id} />
+                      );
+                    }}
+                  />
+                  <Route
+                    path="/reviews/:movieID"
+                    render={(routeProps) => {
+                      return (
+                        <ReviewsScreen movieID={routeProps.match.params.movieID} />
                       );
                     }}
                   />

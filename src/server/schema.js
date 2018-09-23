@@ -30,6 +30,7 @@ const typeDefs = `
     reviewCount: Int!
 		category: String!
 		synopsis: String!
+		similarShows: [Movie!]!
   }
 
   """
@@ -71,63 +72,17 @@ const typeDefs = `
   }
 
 	type Mutation {
-		likeMovie(userID: ID!, movieID: ID!, like: Boolean!): [Boolean]
+		likeMovie(userID: ID!, movieID: ID!, like: Boolean!): Boolean
 	}
 `;
-
-// Reuseable mock DB calls.
-
-const getMovie = (id) => {
-  return movieData.find((movie) => movie.id == id);
-};
-
-const getUser = (id) => {
-  return userData.find((user) => user.id == id);
-};
-
-// Provide resolver functions for your schema fields
 
 const resolvers = {
   Query: {
     appVersion: () => {
       return 'metaflix-0.1.0';
     },
-    movie: (_, args) => {
-      // Get the movie
-
-      const movie = getMovie(args.id);
-
-      // Replace actor IDs with `Actor` type objects
-
-      movie.actors = movie.actors.map((actor) => {
-        return actorData.find((a) => a.id == actor);
-      });
-
-      // Attribute `Review` type reviews to movie and calculate rating and
-      // number of reviews.
-
-      movie.rating = 0;
-      movie.reviewCount = 0;
-      movie.reviews = [];
-
-      reviewData.map((review) => {
-        if (review.movieID == movie.id) {
-          movie.rating += review.rating;
-          movie.reviewCount += 1;
-          movie.reviews.push(review);
-        }
-      });
-
-      // Replace review user IDs with User type data
-
-      movie.reviews.map((review) => {
-        review.user = userData.find((user) => user.id == review.userID);
-        return review;
-      });
-
-      movie.rating = Math.round((movie.rating / movie.reviewCount) * 10) / 10;
-
-      return movie;
+    movie: (_parent, params) => {
+      return movieData.find((movie) => movie.id == params.id);
     },
     movies: () => {
       return movieData;
@@ -145,6 +100,62 @@ const resolvers = {
       // do stuff
 
       return args.like;
+    },
+  },
+  Movie: {
+    actors: (movie, params) => {
+      const mov = movie.actors.map((actor) => {
+        return actorData.find((a) => a.id == actor);
+      });
+
+      return mov;
+    },
+    rating: (movie, params) => {
+      let rating = 0;
+      let totalReviews = 0;
+      reviewData.forEach((review) => {
+        if (review.movieID === movie.id) {
+          ++totalReviews;
+          rating += review.rating;
+        }
+      });
+      if (totalReviews > 0) {
+        return Math.round((rating / totalReviews) * 10) / 10;
+      }
+
+      return null;
+    },
+    reviewCount: (movie, params) => {
+      let numberOfReviews = 0;
+      reviewData.forEach((review) => {
+        if (review.movieID === movie.id) {
+          ++numberOfReviews;
+        }
+      });
+      return numberOfReviews;
+    },
+    reviews: (movie, params) => {
+      const r = reviewData.filter((review) => {
+        return review.movieID === movie.id;
+      });
+
+      const result = r.map((review) => {
+        return {
+          ...review,
+          user: userData.find((user) => {
+            return user.id == review.userID;
+          }),
+        };
+      });
+
+      return result;
+    },
+    similarShows: (movie, params) => {
+			const sim = movie.similarShows.map((showID) => {
+        return movieData.find((mdata) => mdata.id == showID);
+      });
+
+			return sim;
     },
   },
 };

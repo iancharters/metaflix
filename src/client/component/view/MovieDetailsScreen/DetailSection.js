@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import Container from '../../base/Container';
 import Icon from '../../base/Icon';
 import StarRating from '../../base/StarRating';
+import Text from '../../base/Text';
 
 const MovieTitleWrapper = styled.div`
   display: inline-block;

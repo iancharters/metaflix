@@ -34,6 +34,7 @@ const HeaderWrapper = styled.div`
   position: relative;
   display: flex;
   align-items: center;
+  margin-bottom: 32px;
 `;
 
 class HomeScreen extends React.PureComponent {

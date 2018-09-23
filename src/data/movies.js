@@ -9,11 +9,11 @@ export default [
       'https://m.media-amazon.com/images/M/MV5BMTAzODc3NjU1NzNeQTJeQWpwZ15BbWU4MDk5NTQ4NTMx._V1_UX182_CR0,0,182,268_AL_.jpg',
     wideImage:
       'http://old.cinapse.co/wp-content/uploads/2015/01/PreBanner-e1420646046273.jpg',
-    detailImage:
-      'https://i.imgur.com/fV1Gmnv.jpg',
+    detailImage: 'https://i.imgur.com/fV1Gmnv.jpg',
     category: 'banner',
     synopsis:
       'For his final assignment, a top temporal agent must pursue the one criminal that has eluded him throughout time. The chase turns into a unique, surprising and mind-bending exploration of love, fate, identity and time travel taboos.',
+    similarShows: [8, 9],
   },
 
   // Cole's Picks movies
@@ -29,6 +29,7 @@ export default [
     category: 'cole',
     synopsis:
       'Journalist Mikael Blomkvist is aided in his search for a woman who has been missing for forty years by Lisbeth Salander, a young computer hacker.',
+    similarShows: [8, 9],
   },
   {
     id: 3,
@@ -42,6 +43,7 @@ export default [
     category: 'cole',
     synopsis:
       'An exploration of how the actions of individual lives impact one another in the past, present and future, as one soul is shaped from a killer into a hero, and an act of kindness ripples across centuries to inspire a revolution.',
+    similarShows: [8, 9],
   },
   {
     id: 4,
@@ -55,6 +57,7 @@ export default [
     category: 'cole',
     synopsis:
       'A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.',
+    similarShows: [8, 9],
   },
 
   // Recommended movies
@@ -70,6 +73,7 @@ export default [
     category: 'recommended',
     synopsis:
       "Two university students come across a seemingly harmless girl named Lucy, unaware that she's actually a mutant serial killer with a split personality.",
+    similarShows: [8, 9],
   },
   {
     id: 6,
@@ -81,7 +85,9 @@ export default [
     wideImage: '',
     detailImage: '',
     category: 'recommended',
-    synopsis: 'After a tragic accident, two stage magicians engage in a battle to create the ultimate illusion while sacrificing everything they have to outwit each other.',
+    synopsis:
+      'After a tragic accident, two stage magicians engage in a battle to create the ultimate illusion while sacrificing everything they have to outwit each other.',
+    similarShows: [8, 9],
   },
   {
     id: 7,
@@ -93,6 +99,35 @@ export default [
     wideImage: '',
     detailImage: '',
     category: 'recommended',
-    synopsis: 'Dom Cobb is a skilled thief, the absolute best in the dangerous art of extraction, stealing valuable secrets from deep within the subconscious during the dream state, when the mind is at its most vulnerable. Cobb\'s rare ability has made him a coveted player in this treacherous new world of corporate espionage, but it has also made him an international fugitive and cost him everything he has ever loved. Now Cobb is being offered a chance at redemption. One last job could give him his life back but only if he can accomplish the impossible - inception. Instead of the perfect heist, Cobb and his team of specialists have to pull off the reverse: their task is not to steal an idea but to plant one. If they succeed, it could be the perfect crime. But no amount of careful planning or expertise can prepare the team for the dangerous enemy that seems to predict their every move. An enemy that only Cobb could have seen coming.',
+    synopsis:
+      "Dom Cobb is a skilled thief, the absolute best in the dangerous art of extraction, stealing valuable secrets from deep within the subconscious during the dream state, when the mind is at its most vulnerable. Cobb's rare ability has made him a coveted player in this treacherous new world of corporate espionage, but it has also made him an international fugitive and cost him everything he has ever loved. Now Cobb is being offered a chance at redemption. One last job could give him his life back but only if he can accomplish the impossible - inception. Instead of the perfect heist, Cobb and his team of specialists have to pull off the reverse: their task is not to steal an idea but to plant one. If they succeed, it could be the perfect crime. But no amount of careful planning or expertise can prepare the team for the dangerous enemy that seems to predict their every move. An enemy that only Cobb could have seen coming.",
+    similarShows: [8, 9],
+  },
+  {
+    id: 8,
+    title: 'Looper',
+    actors: [20, 22, 23],
+    genres: ['Action', 'Crime', 'Drama'],
+    coverImage: 'http://www.impawards.com/2012/posters/looper.jpg',
+    wideImage: '',
+    detailImage: '',
+    category: '',
+    synopsis:
+      "In 2074, when the mob wants to get rid of someone, the target is sent into the past, where a hired gun awaits - someone like Joe - who one day learns the mob wants to 'close the loop' by sending back Joe's future self for assassination.",
+    similarShows: [8, 9],
+  },
+  {
+    id: 9,
+    title: 'Source Code',
+    actors: [24, 25, 26],
+    genres: ['Mystery', 'Romance', 'Sci-Fi'],
+    coverImage:
+      'https://m.media-amazon.com/images/M/MV5BMTY0MTc3MzMzNV5BMl5BanBnXkFtZTcwNDE4MjE0NA@@._V1_UX182_CR0,0,182,268_AL_.jpghttps://m.media-amazon.com/images/M/MV5BMTY0MTc3MzMzNV5BMl5BanBnXkFtZTcwNDE4MjE0NA@@._V1_UX182_CR0,0,182,268_AL_.jpg',
+    wideImage: '',
+    detailImage: '',
+    category: '',
+    synopsis:
+      "A soldier wakes up in someone else's body and discovers he's part of an experimental government program to find the bomber of a commuter train. A mission he has only 8 minutes to complete.",
+    similarShows: [8, 9],
   },
 ];

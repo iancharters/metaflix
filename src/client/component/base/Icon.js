@@ -305,7 +305,7 @@ const icons = {
       </g>
     </svg>
   ),
-  plus: (
+  add: (
     <svg
       width="30px"
       height="30px"
