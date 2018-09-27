@@ -20,7 +20,7 @@ export default [
     userID: 3,
     movieID: 1,
     rating: 3,
-    content: 'There’s missing specs in this movie’s plot: \n1981: Time travel is invented. This allows travelers to go as far forward as 2034 or as far back as 1928. Everything is fine so far.\n1964: The birth of the main character sets up something something something make this too long.',
+    content: 'There’s missing specs in this movie’s plot: \n\n1981: Time travel is invented. This allows travelers to go as far forward as 2034 or as far back as 1928. Everything is fine so far.\n\n1964: The birth of the main character sets up something something something make this too long hi.',
     datePosted: '',
   },
   {

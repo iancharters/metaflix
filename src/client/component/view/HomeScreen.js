@@ -37,6 +37,10 @@ const HeaderWrapper = styled.div`
   margin-bottom: 32px;
 `;
 
+const SectionWrapper = styled.div`
+  padding-bottom: 32px;
+`;
+
 class HomeScreen extends React.PureComponent {
   render() {
     return (
@@ -69,31 +73,37 @@ class HomeScreen extends React.PureComponent {
             return (
               <div>
                 <Container>
-                  {banner.map((movie) => {
-                    return <BannerMovie key={movie.id} movie={movie} />;
-                  })}
+                  <SectionWrapper>
+                    {banner.map((movie) => {
+                      return <BannerMovie key={movie.id} movie={movie} />;
+                    })}
+                  </SectionWrapper>
                 </Container>
                 <Container>
-                  <Text.H2>
-                    Cole's Picks
-                    <Text.SMALL_RIGHT>See all</Text.SMALL_RIGHT>
-                  </Text.H2>
-                  <Carousel>
-                    {colesPicks.map((movie) => {
-                      return <Movie key={movie.id} movie={movie} />;
-                    })}
-                  </Carousel>
+                  <SectionWrapper>
+                    <Text.H2>
+                      Cole's Picks
+                      <Text.SMALL_RIGHT>See all</Text.SMALL_RIGHT>
+                    </Text.H2>
+                    <Carousel>
+                      {colesPicks.map((movie) => {
+                        return <Movie key={movie.id} movie={movie} />;
+                      })}
+                    </Carousel>
+                  </SectionWrapper>
                 </Container>
                 <Container>
-                  <Text.H2>
-                    Recommended
-                    <Text.SMALL_RIGHT>See all</Text.SMALL_RIGHT>
-                  </Text.H2>
-                  <Carousel>
-                    {recommended.map((movie) => {
-                      return <Movie key={movie.id} movie={movie} />;
-                    })}
-                  </Carousel>
+                  <SectionWrapper>
+                    <Text.H2>
+                      Recommended
+                      <Text.SMALL_RIGHT>See all</Text.SMALL_RIGHT>
+                    </Text.H2>
+                    <Carousel>
+                      {recommended.map((movie) => {
+                        return <Movie key={movie.id} movie={movie} />;
+                      })}
+                    </Carousel>
+                  </SectionWrapper>
                 </Container>
               </div>
             );

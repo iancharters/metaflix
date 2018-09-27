@@ -5,9 +5,15 @@ import styled from 'styled-components';
 // Import components ===========================================================
 import StarRating from '../../base/StarRating';
 import Text from '../../base/Text';
+import FormatText from '../../base/FormatText';
+import TextTruncate from 'react-text-truncate';
+import Dotdotdot from 'react-dotdotdot';
 
 const ReviewWrapper = styled.div`
   margin-bottom: 31px;
+  &:first-child {
+    padding-top: 21px;
+  }
 `;
 
 const Bubble = styled.div`
@@ -37,6 +43,7 @@ const BubbleText = styled.div`
   display: block;
   color: #ffffff;
   opacity: 0.6;
+  white-space: pre;
 `;
 
 const PosterInfoWrapper = styled.div`
@@ -88,31 +95,29 @@ class Review extends React.PureComponent {
   render() {
     const {review} = this.props;
     return (
-        <ReviewWrapper>
-          <PosterInfoWrapper>
-            <PosterInfoItem>
-              <Picture />
-            </PosterInfoItem>
-            <PosterInfoItem>
-              <NameWrapper>
-                <Text.H3>{review.user.name}</Text.H3>
-              </NameWrapper>
-              <StarRating rating={review.rating} />
-            </PosterInfoItem>
-            <PosterInfoItem>
-              <DateWrapper>
-                <Text.H3>3 days ago</Text.H3>
-              </DateWrapper>
-            </PosterInfoItem>
-          </PosterInfoWrapper>
-          <Bubble>
-            <BubbleText>
-              <Text.H3>
-                {review.content}
-              </Text.H3>
-            </BubbleText>
-          </Bubble>
-        </ReviewWrapper>
+      <ReviewWrapper>
+        <PosterInfoWrapper>
+          <PosterInfoItem>
+            <Picture />
+          </PosterInfoItem>
+          <PosterInfoItem>
+            <NameWrapper>
+              <Text.H3>{review.user.name}</Text.H3>
+            </NameWrapper>
+            <StarRating rating={review.rating} />
+          </PosterInfoItem>
+          <PosterInfoItem>
+            <DateWrapper>
+              <Text.H3>3 days ago</Text.H3>
+            </DateWrapper>
+          </PosterInfoItem>
+        </PosterInfoWrapper>
+        <Bubble>
+          <BubbleText>
+            <FormatText>{review.content}</FormatText>
+          </BubbleText>
+        </Bubble>
+      </ReviewWrapper>
     );
   }
 }

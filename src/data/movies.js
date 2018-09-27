@@ -108,7 +108,7 @@ export default [
     title: 'Looper',
     actors: [20, 22, 23],
     genres: ['Action', 'Crime', 'Drama'],
-    coverImage: 'http://www.impawards.com/2012/posters/looper.jpg',
+    coverImage: 'https://contactinfinitefutures.files.wordpress.com/2012/09/looper-2.jpg',
     wideImage: '',
     detailImage: '',
     category: '',

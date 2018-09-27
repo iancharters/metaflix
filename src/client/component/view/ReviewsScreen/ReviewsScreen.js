@@ -14,10 +14,6 @@ import Review from './Review';
 // Import query ================================================================
 import {GET_MOVIE_REVIEWS} from '../../query/movie.query';
 
-const ReviewsWrapper = styled.div`
-  margin-top: 21px;
-`;
-
 class ReviewsScreen extends React.PureComponent {
   render() {
     return (
@@ -33,11 +29,9 @@ class ReviewsScreen extends React.PureComponent {
                 path={`/movie/${this.props.movieID}`}
               />
               <Container>
-                <ReviewsWrapper>
                   {data.movie.reviews.map((review) => {
                     return <Review review={review} />;
                   })}
-                </ReviewsWrapper>
               </Container>
             </React.Fragment>
           );
