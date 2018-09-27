@@ -11,17 +11,14 @@ const Star = styled.div`
 class StarRating extends React.PureComponent {
   render() {
     const rating = Math.round(this.props.rating);
-    let remainingStars = 5;
     const stars = [];
 
     for (let i = 0; i < rating; i++) {
       stars.push(<Icon name="starFilled" />);
-      --remainingStars;
     }
 
-    for (let i = 0; i <= remainingStars; i++) {
+    for (let i = 0; i < 5 - rating; i++) {
       stars.push(<Icon name="star" />);
-      --remainingStars;
     }
 
     return (
