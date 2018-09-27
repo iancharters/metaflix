@@ -58,6 +58,7 @@ const typeDefs = `
     user: User!
     rating: Int!
     content: String!
+		datePosted: String!
   }
 
   # ================================================

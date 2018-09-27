@@ -20,6 +20,7 @@ export const GET_MOVIE = gql`
           name
           photo
         }
+        datePosted
       }
       rating
       reviewCount
